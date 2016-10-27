@@ -43,6 +43,12 @@ function makeGraphs(error, projectsJson, statesJson) {
         return d["teacher_prefix"];
     });
 
+    var gradeLevelDim = ndx.dimension(function (d) {
+        return d["grade_level"];
+    });
+
+
+
 
     //Calculate metrics
     var numProjectsByDate = dateDim.group();
@@ -54,6 +60,7 @@ function makeGraphs(error, projectsJson, statesJson) {
     });
     var stateGroup = stateDim.group();
     var numProjectsByTeacherPrefix = teacherPrefixDim.group();
+    var numProjectsByGradeLevel = gradeLevelDim.group();
 
 
     var all = ndx.groupAll();
@@ -76,6 +83,7 @@ function makeGraphs(error, projectsJson, statesJson) {
     var fundingStatusChart = dc.pieChart("#funding-chart");
     var fundingStatusmap = dc.geoChoroplethChart("#funding-map");
     var teacherPrefixChart = dc.pieChart("#teacher-prefix");
+    var gradeLevelChart = dc.pieChart("#grade_level");
 
 
     selectField = dc.selectMenu('#menu-select')
@@ -139,6 +147,15 @@ function makeGraphs(error, projectsJson, statesJson) {
         .transitionDuration(1500)
         .dimension(teacherPrefixDim)
         .group(numProjectsByTeacherPrefix);
+
+    gradeLevelChart
+        .height(220)
+        .radius(90)
+        .innerRadius(40)
+        .transitionDuration(1500)
+        .dimension(gradeLevelDim)
+        .group(numProjectsByGradeLevel);
+
 
     fundingStatusmap.width(1000)
         .height(330)
