@@ -6,10 +6,10 @@ import os
 
 app = Flask(__name__)
 
-MONGODB_HOST = 'localhost'
-MONGODB_PORT = 27017
+#MONGODB_HOST = 'ds137197.mlab.com'
+#MONGODB_PORT = 37197
 MONGODB_URI = os.getenv('MONGODB_URI')
-DBS_NAME = 'donorsUSA'
+DBS_NAME = 'heroku_nvdzg2lv'
 COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status':True, 'school_state':True, 'resource_type':True, 'poverty_level':True, 'date_posted':True, 'total_donations':True, 'teacher_prefix':True, 'grade_level':True, '_id':False,}
 
