@@ -55,3 +55,29 @@
    padding-bottom: 0px;
 
 }
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color:rgba(74, 72, 126, 0);
+}
+
+#navbar {
+    background-color:rgb(83, 163, 163);
+}
+
+.blue {
+   background-color: rgb(113, 159, 241);
+}
+
+.green {
+   background-color: rgb(144, 236, 192);
+}
+
+.red {
+   background-color: rgb(255, 102, 133);
+}
+
+.yellow {
+   background-color: rgb(237, 253, 46);
+}
+
+
