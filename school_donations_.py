@@ -14,11 +14,11 @@ COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status':True, 'school_state':True, 'resource_type':True, 'poverty_level':True, 'date_posted':True, 'total_donations':True, 'teacher_prefix':True, 'grade_level':True, '_id':False,}
 
 
-@app.route('/')
+@app.route('/base')
 def index():
     return render_template('index.html')
 
-@app.route('/base')
+@app.route('/')
 def base():
     return render_template('base.html')
 
