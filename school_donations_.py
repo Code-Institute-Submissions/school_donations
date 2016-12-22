@@ -6,8 +6,8 @@ import os
 
 app = Flask(__name__)
 
-MONGODB_HOST = 'ds137197.mlab.com'
-MONGODB_PORT = 37197
+# MONGODB_HOST = 'ds137197.mlab.com'
+# MONGODB_PORT = 37197
 MONGODB_URI = os.getenv('MONGODB_URI')
 DBS_NAME = os.getenv('MONGO_DB_NAME')
 COLLECTION_NAME = 'projects'
